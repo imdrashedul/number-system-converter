@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Number System Converter</title>
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/styles.css">
+	<link rel="shortcut icon" href="./assets/images/number-conv.png" type="image/png">
+</head>
+<body>
+	<div class="navbar">
+		<div class="container">
+			<img width="40px" height="40px" src="./assets/images/number-conv.png"> <span class="header">Number System Converter</span>
+		</div>
+	</div>
+	<div class="container">
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="title">Number system conversion table from 1 to 15</span>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<table class="table table-bordered table-striped mb-0">
+							<tbody>
+							   <tr>
+								  <th> Decimal Number <br> Base-10 </th>
+								  <th> Binary Number <br> Base-2 </th>
+								  <th> Octal Number <br> Base-8 </th>
+								  <th> Hexadecimal Number <br> Base-16 </th>
+							   </tr>
+							   <tr>
+								  <td>1</td>
+								  <td>1</td>
+								  <td>1</td>
+								  <td>1</td>
+							   </tr>
+							   <tr>
+								  <td>2</td>
+								  <td>10</td>
+								  <td>2</td>
+								  <td>2</td>
+							   </tr>
+							   <tr>
+								  <td>3</td>
+								  <td>11</td>
+								  <td>3</td>
+								  <td>3</td>
+							   </tr>
+							   <tr>
+								  <td>4</td>
+								  <td>100</td>
+								  <td>4</td>
+								  <td>4</td>
+							   </tr>
+							   <tr>
+								  <td>5</td>
+								  <td>101</td>
+								  <td>5</td>
+								  <td>5</td>
+							   </tr>
+							   <tr>
+								  <td>6</td>
+								  <td>110</td>
+								  <td>6</td>
+								  <td>6</td>
+							   </tr>
+							   <tr>
+								  <td>7</td>
+								  <td>111</td>
+								  <td>7</td>
+								  <td>7</td>
+							   </tr>
+							   <tr>
+								  <td>8</td>
+								  <td>1000</td>
+								  <td>10</td>
+								  <td>8</td>
+							   </tr>
+							   <tr>
+								  <td>9</td>
+								  <td>1001</td>
+								  <td>11</td>
+								  <td>9</td>
+							   </tr>
+							   <tr>
+								  <td>10</td>
+								  <td>1010</td>
+								  <td>12</td>
+								  <td>A</td>
+							   </tr>
+							   <tr>
+								  <td>11</td>
+								  <td>1011</td>
+								  <td>13</td>
+								  <td>B</td>
+							   </tr>
+							   <tr>
+								  <td>12</td>
+								  <td>1100</td>
+								  <td>14</td>
+								  <td>C</td>
+							   </tr>
+							   <tr>
+								  <td>13</td>
+								  <td>1101</td>
+								  <td>15</td>
+								  <td>D</td>
+							   </tr>
+							   <tr>
+								  <td>14</td>
+								  <td>1110</td>
+								  <td>16</td>
+								  <td>E</td>
+							   </tr>
+							   <tr>
+								  <td>15</td>
+								  <td>1111</td>
+								  <td>17</td>
+								  <td>F</td>
+							   </tr>
+							</tbody>
+						 </table>
+					</div>
+				</div>
+			</div>
+		</div>
+		 
+		<form action="javascript:void(0)" id="xc">
+			<div class="form-group">
+				<label for="x-t">Choose Conversion:</label>
+				<select id="x-t" class="form-control">
+					<option value="D-B">Decimal To Binary</option>
+					<option value="D-O">Decimal To Octal</option>
+					<option value="D-H">Decimal To Hexa-Decimal</option>
+					<option value="B-D">Binary To Decimal </option>
+					<option value="O-D">Octal  To Decimal</option>
+					<option value="H-D">Hexa-Decimal To Decimal</option>
+					<option value="B-O">Binary To Octal</option>
+					<option value="B-H">Binary To Hexa-Decimal</option>
+					<option value="O-B">Octal To Binary</option>
+					<option value="H-B">Hexa-Decimal To Binary</option>
+					<option value="O-H">Octal To Hexa-Decimal</option>
+					<option value="H-O">Hexa-Decimal To Octal</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="x-n">Type Number Here</label>
+				<input type="text" id="x-n" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-default">Convert</button>
+		</form>
+		<span class="pull-right table-popup" data-toggle="modal" data-target="#exampleModal">
+			Number Conversion Table
+		</span>
+		<div id="report"></div>
+		<div class="footer">
+			<span>&copy; 2017 All Rights Reserved</span><br>
+			Developed By <a href="http://mrashedulislam.com" target="_blank">M. Rashedul Islam</a>
+		</div>
+	</div>
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/app.js"></script>
+</body>
+</html>
